@@ -1,12 +1,5 @@
 <?php
-    require_once '../actor/PHPMailer/Exception.php';        
-    require_once '../actor/PHPMailer/PHPMailer.php';
-    require_once '../actor/PHPMailer/SMTP.php';
     require_once './ActorBL.php';
-
-
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
     class ActorService {
         private $actorDTO;
         private $actorBL;
@@ -123,38 +116,6 @@
                 }
         break;
             }
-        case 'MAIL':{
-                $mail = new PHPMailer();
-                $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
-                $mail->Port = 587;
-                $mail->SMTPSecure = 'tls';
-                $mail->SMTPAuth = true;
-                $mail->Username = "20193l001120@utcv.edu.mx";
-                $mail->Password = "Almadelia10*";
-                $mail->setFrom('20193l001120@utcv.edu.mx', 'Magda');
-                $mail->addAddress('magdalenapozos95@gmail.com', 'Magdaa');
-                $archivo ='Plantillas PSP.pdf';
-                $mail->AddAttachment($archivo, $archivo);
-                $mail->Subject = 'Probando';
-                $mail->msgHTML("<html>
-                <body>
-                <h1>Revisando conexión</h1>
-                Aquí va el contenido
-                <p>Esto es un parrafo de prueba</p>
-                </body>
-                </html");
-                $mail->CharSet = 'UTF-8';
-                $mail->IsHTML(true);
-                if (!$mail->send())
-                {
-                    echo "Error al enviar el E-Mail: ".$mail->ErrorInfo;
-                }
-                else
-                {
-                    echo "E-Mail enviado";
-                }
-        }
         default:
         {
 
