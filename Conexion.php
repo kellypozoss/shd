@@ -7,10 +7,10 @@
 		private $Connection;
 	
 		public function __construct(){
-			$this-> Host = "localhost";
-            $this-> User = "root";
-            $this-> Password = "";
-			$this-> Database = "sakila";
+			$this-> Host = "b2lxsiervngbrckn3vrq-mysql.services.clever-cloud.com";
+            $this-> User = "ua0u8jilk1bobxhd";
+            $this-> Password = "7k8XbL2I71gs6Y8prC14";
+			$this-> Database = "b2lxsiervngbrckn3vrq";
 		}
 
 		public function OpenConnection() {
